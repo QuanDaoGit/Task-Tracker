@@ -1,0 +1,289 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Ensures padding doesn't accidentally increase element width */
+}
+
+:root {
+    --primary-color: #3498db;
+    --primary-dark: #217dbb;
+    --success-color: #35b76d;
+    --danger-color: #ff6b6b;
+    --card-bg: #ffffff;
+    --page-bg: #eef2f7;
+    --border-color: #d7dee8;
+    --text-dark: #2c3e50;
+    --text-muted: #6b7280;
+    --spacing-main: 16px;
+    --primary-font: sans-serif typefaces;
+}
+
+
+.slide-toggle {
+    height: auto;
+    overflow: hidden;
+    transition: height 0.5s, opacity 0.5s ease;
+    interpolate-size: allow-keywords;
+}
+
+.slide-toggle.is-hidden {
+    height: 0px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+
+body {
+    min-height: 100vh;
+    max-width: 620px;
+    font-family: Arial, sans-serif;
+    color: var(--text-dark);
+    background: var(--page-bg);
+    margin: 0 auto;
+    padding: 28px 18px;
+}
+
+header {
+    margin-bottom: 18px;
+}
+
+/* Container to keep label and input stacked nicely */
+.item-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Spacing between label and input */
+    margin-bottom: 15px;
+}
+
+/* Label styling */
+.item-group label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+}
+
+/* Input core styling */
+.item-group input {
+    width: 100%;
+    padding: 10px 14px;
+    /* Generous inner spacing */
+    font-size: 16px;
+    /* Prevents iOS from auto-zooming on mobile */
+    font-family: inherit;
+
+    color: #2d3748;
+    background-color: #ffffff;
+
+    border: 1px solid #cbd5e0;
+    /* Subtle gray border */
+    border-radius: 6px;
+    /* Smoothly rounded corners */
+
+    outline: none;
+
+    /* Smoothly animates the glow effect on interaction */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Interactive Style A: When the user hovers over it */
+.item-group input:hover {
+    border-color: #a0aec0;
+}
+
+/* Interactive Style B: When the user clicks inside to type (Focus) */
+.item-group input:focus {
+    border-color: #3498db;
+    /* Clean blue border highlight */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    /* Soft blue outer glow */
+}
+
+/* Styling the placeholder text inside the box */
+.item-group input::placeholder {
+    color: #a0aec0;
+    font-style: italic;
+}
+
+h1 {
+    display: inline-block;
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--primary-color);
+    font-size: 42px;
+    line-height: 1.05;
+    padding-bottom: 8px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+#util-btns {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+#task-list {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 24px rgba(44, 62, 80, 0.08);
+}
+
+#complete-task-list {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 24px rgba(44, 62, 80, 0.08);
+}
+
+.input-field {
+    margin-top: var(--spacing-main);
+    margin-bottom: var(--spacing-main);
+}
+
+.button-primary {
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 10px;
+    font-size: 16px;
+    white-space: nowrap;
+
+
+    /* Soft red background */
+    color: white;
+    /* White X symbol */
+    border: none;
+
+    /* Make it a clean, small circle */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+
+    /* Make the text X look like a thick graphic icon */
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 0;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.complete-task-btn {
+    background-color: var(--success-color);
+}
+
+.remove-task-btn {
+    background-color: var(--danger-color);
+}
+
+.button-secondary:hover {
+    filter: brightness(0.85);
+    transform: translateY(-2px);
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.id-task {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    gap: 10px;
+}
+
+.id-task .input-field {
+    flex: 1;
+}
+
+.id {
+    min-width: 24px;
+    color: var(--text-muted);
+}
+
+.id-task .input-field {
+    flex: 1;
+}
+
+.task-item>div:last-child {
+    display: flex;
+    gap: 8px;
+}
+
+.complete-task-item {
+    display: flex;
+}
+
+.complete-task-item {
+    background-color: #7dcbff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.id-complete-task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.complete-task-text {
+    font-style:initial;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+@media (max-width: 520px) {
+    body {
+        padding: 22px 14px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    #util-btns,
+    .task-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .task-item>div:last-child {
+        justify-content: flex-end;
+    }
+}

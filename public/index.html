@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Web App</title>
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Task Tracker
+        </h1>
+    </header>
+
+    <!-- util buttons -->
+    <section id='util-btns'>
+        <button type="button" id="add-task-btn" class="button-primary">Add Task</button>
+        <button type="button" id="toggle-list-btn" class="button-primary">Toggle List</button>
+        <button type="button" id="toggle-complete-task-btn" class="button-primary">Completed Task</button>
+    </section>
+
+    <section id="task-list" class="item-group slide-toggle">
+
+        <h2>Task List</h2>
+        <template id="task-item-template">
+
+            <div class="task-item">
+
+                <div class="id-task">
+                    <h3 class="id"></h3>
+                    <input type="text" class="input-field" name="taskName" placeholder="e.g. Do homework">
+                </div>
+
+                <div>
+                    <button type="button" class="button-secondary remove-task-btn">
+                        <span class="material-symbols-outlined">&times;</span>
+                    </button>
+
+                    <button type="button" class="button-secondary complete-task-btn">
+                        <span class="material-symbols-outlined">&#10004;</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </template>
+
+    </section>
+
+    <section id="complete-task-list" class="item-group slide-toggle">
+        <h2>
+            Completed Task
+        </h2>
+
+        <template id="complete-task-item-template">
+            <div class="complete-task-item">
+                <div class="id-complete-task">
+                    <h3 class="id"></h3>
+                    <p class="complete-task-text"></p>
+                </div>
+            </div>
+
+        </template>
+    </section>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
